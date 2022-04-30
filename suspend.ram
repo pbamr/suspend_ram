@@ -3,13 +3,13 @@
 
 case "$1" in
   start)
-        echo "Starting pb.suspend.ram!"
+        echo "Starting suspend.ram!"
         /sbin/suspend.to.ram &
 
         exit 0
         ;;
  stop)
-        echo "Stopping pb.suspend.ram!"
+        echo "Stopping suspend.ram!"
         pkill suspend.to.ram
         exit 0
         ;;
