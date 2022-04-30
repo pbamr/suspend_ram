@@ -1,0 +1,40 @@
+#! /bin/sh
+# Basic support for IRIX style chkconfig
+###
+# chkconfig: 235 98 55
+# description: Manages the services you are controlling with the chkconfig command
+###
+
+
+
+
+case "$1" in
+  start)
+        echo "Starting pb.suspend.ram!"
+        #To run it as root:
+        /sbin/suspend.to.ram &
+
+        exit 0
+        #Or to run it as some other user:
+        #/bin/su - username -c /path/to/command/to/start/new-service
+        #echo "."
+        ;;
+ stop)
+        echo "Stopping pb.suspend.ram!"
+        #To run it as root:
+        pkill suspend.to.ram
+        exit 0
+        #Or to run it as some other user:
+        #/bin/su - username -c /path/to/command/to/stop/new-service
+        #echo "."
+        ;;
+
+ *)
+        echo "Usage: service suspend.ram {start|stop}"
+        exit 1
+esac
+
+exit 0
+
+
+

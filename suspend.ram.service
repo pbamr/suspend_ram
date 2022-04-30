@@ -1,0 +1,10 @@
+[Unit]
+Description=/sbin/suspend.to.ram
+ConditionPatExists=/sbin/suspend.to.ram
+
+[Service]
+ExecStart=/sbin/suspend.to.ram start
+TimeOutSec=0
+
+[Install]
+WantedBy=multi-user.target

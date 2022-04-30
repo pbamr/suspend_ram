@@ -1,0 +1,20 @@
+#!/bin/bash
+	
+	
+while true
+	do
+		cat /tmp/suspend_ram 2>/dev/null
+		
+		#Wenn Rueckgabewert $? = 0
+		if [ "$?" == "0" ]
+			then
+				#suspend to ram
+				sleep 30
+				echo mem > /sys/power/state 2>/dev/null
+				rm /tmp/suspend_ram 2>/dev/null
+		fi
+		
+		sleep 2;
+		
+	done;
+	
